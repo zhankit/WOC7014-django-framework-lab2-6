@@ -1,0 +1,2 @@
+#Packages
+Django==4.2
