@@ -32,10 +32,18 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ") if os.environ.get('AL
 
 # Application definition
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_PATH = os.path.dirname(os.path.dirname(__file__))
 
 TEMPLATE_DIRS = (
-    os.path.join(SETTINGS_PATH, 'templates'),
+    os.path.join(TEMPLATE_PATH, 'templates'),
 )
+
+STATIC_URL = 'static/'
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+STATIC_FILES_DIR = [
+    STATIC_DIR,
+]
 
 INSTALLED_APPS = [
     # 'HelloWorlds',
