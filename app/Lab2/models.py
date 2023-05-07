@@ -69,7 +69,9 @@ class Model(models.Model):
 		return self.modelName
 
 	def save(self, *args, **kwargs):
-		self.slug = slugify(self.modelName)
+		self.slug = '%s-%s' % (
+			self.brand.name, self.modelName
+		)
 		super().save(*args, **kwargs)
 
 class Review(models.Model):
@@ -90,8 +92,11 @@ class Review(models.Model):
 	createdDate = models.DateField(null=True, blank=True)
 
 	def __str__(self):
-		return self.title
+		return self.description
 
 	def save(self, *args, **kwargs):
-		self.slug = slugify(self.title)
+		super(Review, self).save()
+		self.slug = '%i-%s' % (
+			self.id, slugify(self.model.name)
+		)
 		super().save(*args, **kwargs)

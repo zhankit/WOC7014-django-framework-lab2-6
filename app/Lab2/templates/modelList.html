@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block subTitle %}Model List{% endblock %}
+
+{% block content %}
+{% for model in all_models %}
+    <li><a href="models/{{model.modelName}}">{{ model.modelName }}</a></li>
+    <!-- <p>{{ entry.body }}</p> -->
+{% endfor %}
+{% endblock %}

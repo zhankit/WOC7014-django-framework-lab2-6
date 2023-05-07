@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block subTitle %}Brand List{% endblock %}
+
+{% block content %}
+{% for brand in all_brands %}
+    <li><a href="brand/{{brand.name}}">{{ brand.name }}</a></li>
+    <!-- <p>{{ entry.body }}</p> -->
+{% endfor %}
+{% endblock %}
