@@ -4,7 +4,6 @@
 
 {% block content %}
 {% for brand in all_brands %}
-    <li><a href="brand/{{brand.name}}">{{ brand.name }}</a></li>
-    <!-- <p>{{ entry.body }}</p> -->
+    <li><a href="brand/{{brand.id}}">{{ brand.name }} = {{brand.slug}}</a></li>
 {% endfor %}
 {% endblock %}

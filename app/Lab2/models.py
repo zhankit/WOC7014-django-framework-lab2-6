@@ -41,7 +41,8 @@ class Brand(models.Model):
 	origin = models.CharField(max_length=100)
 	manufacturing = models.CharField(max_length=100)
 	manufacturingYear = models.DateField(null=True, blank=True)
-
+	slug = models.SlugField(unique=True)
+	
 	def __str__(self):
 		return self.name
 
@@ -64,6 +65,7 @@ class Model(models.Model):
         max_length=2,
         choices=OPERATING_SYSTEM,
     )
+	slug = models.SlugField(unique=True)
 
 	def __str__(self):
 		return self.modelName
@@ -90,6 +92,7 @@ class Review(models.Model):
         choices=OPERATING_SYSTEM,
     )
 	createdDate = models.DateField(null=True, blank=True)
+	slug = models.SlugField(unique=True)
 
 	def __str__(self):
 		return self.description

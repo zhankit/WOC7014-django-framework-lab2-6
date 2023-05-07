@@ -24,9 +24,10 @@ class BrandListView(generic.ListView):
 class ModelListView(generic.ListView):
     template_name = 'modelList.html'
     context_object_name = 'all_models'
+    # template_name_suffix
     
     def get_queryset(self):
-        return Model.objects.all()
+        return Model.objects.filter(brand=self.kwargs['slug'])
 
 def details_view(request, slug):
     # mymember = Model.objects.get(slug=slug)
