@@ -96,7 +96,7 @@ class add_phone_forms_view(generic.TemplateView):
         if (form.is_valid):
             form.save()
             # title = form.cleaned_data['title']
-            return HttpResponseRedirect(reverse('add_phone_forms'))
+            return HttpResponseRedirect('/home')
 
 
 
@@ -115,7 +115,7 @@ class add_brand_forms_view(generic.TemplateView):
         if (form.is_valid):
             form.save()
             # title = form.cleaned_data['title']
-            return HttpResponseRedirect(reverse('add_phone_forms'))
+            return HttpResponseRedirect('/home')
 
 
 
@@ -134,4 +134,4 @@ class add_review_forms_view(generic.TemplateView):
         if (form.is_valid):
             form.save()
             # title = form.cleaned_data['title']
-            return HttpResponseRedirect(reverse('add_phone_forms'))
+            return HttpResponseRedirect('/home')
