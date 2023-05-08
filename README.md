@@ -1,8 +1,11 @@
 # WOC7014-django-framework
 Framework-based software design and development
 
-## Pre-requiste
+# Pre-requite
 - Docker
 
-# Startup
-`docker-compose up --build -d`
+# Installation
+`docker-compose up --build`
+
+# URL
+`http://localhost:4000`
