@@ -3,6 +3,23 @@
 {% block subTitle %}Details{% endblock %}
 
 {% block content %}
-<h1>{Welcome}</h1>
-<p>Phone Name: </p>
+
+<p><strong>Brand: </strong>{{details.brand}}</p>
+<p><strong>Model Name: </strong>{{details.modelName}}</p>
+<p><strong>Launch Date: </strong>{{details.launchDate}}</p>
+<p><strong>Platform: </strong>{{details.platform}}</p>
+<p><strong>OS: </strong>{{details.operatingSystem}}</p>
+
+
+<hr class="solid">
+
+{% for review in reviews %}
+	<p><strong>Description: </strong>{{review.description}}</p>
+	<p><strong>Review: </strong>{{review.review}} / 5</p>
+	<p><strong>Created Date: </strong>{{review.createdDate}}</p>
+	<hr class="dashed">
+{% empty %}
+    <p>There are no review currently.</p>
+{% endfor %}
+
 {% endblock %}

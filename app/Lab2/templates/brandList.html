@@ -4,6 +4,8 @@
 
 {% block content %}
 {% for brand in all_brands %}
-    <li><a href="brand/{{brand.id}}">{{ brand.name }} = {{brand.slug}}</a></li>
+    <li><a href="brand/{{brand.slug}}">{{ brand.name }}</a></li>
+{% empty %}
+    <p>There are no brands in the library.</p>
 {% endfor %}
 {% endblock %}

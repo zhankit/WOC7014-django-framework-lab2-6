@@ -19,6 +19,10 @@ from .views import radarApp_main_view
 from .views import BrandListView
 from .views import ModelListView
 from .views import details_view
+from .views import add_phone_forms_view
+from .views import add_brand_forms_view
+from .views import add_review_forms_view
+
 from django.urls import path
 # from . import views
 
@@ -26,7 +30,10 @@ urlpatterns = [
     path("", radarApp_view, name='hw'),
     path("home", radarApp_main_view, name='hw'),
     path("brand", BrandListView.as_view(), name='brandList'),
-    path("brand/<slug:slug>", ModelListView.as_view(), name='modelList'),
-    path("brand/models/<slug:slug>", details_view, name='details'),
-    # path('', include("HelloWorlds.urls")),
+    path("brand/<slug:slug_brand>", ModelListView.as_view(), name='modelList'),
+    path("models/<slug:slug_model>", details_view, name='details'),
+    path('addPhone', add_phone_forms_view.as_view(), name="add_phone"),
+    path('addBrand', add_brand_forms_view.as_view(), name="add_phone"),
+    path('addReview', add_review_forms_view.as_view(), name="add_phone"),
+
 ]

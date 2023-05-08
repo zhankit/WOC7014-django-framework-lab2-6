@@ -4,7 +4,8 @@
 
 {% block content %}
 {% for model in all_models %}
-    <li><a href="models/{{model.modelName}}">{{ model.modelName }}</a></li>
-    <!-- <p>{{ entry.body }}</p> -->
-{% endfor %}
+    <li><a href="/models/{{model.slug}}">{{ model.modelName }}</a></li>
+    {% empty %}
+    <p>There are no models in the library.</p>
+    {% endfor %}
 {% endblock %}
